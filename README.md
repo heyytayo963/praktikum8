@@ -58,5 +58,43 @@ def tampilkan(self):
         return
         
 ```
+- setalah itu masukkan def hapus untuk menghapus data yang sudah ada dengan memasukan nama yang ingin di hapus
+```
+def hapus(self):
+        print("Hapus Data")
+        self.nama = input("Masukkan Nama  : ")
+        if self.nama in data.keys():
+            del data[self.nama]
+        else:
+            print("Nama {0} Tidak Ditemukan".format(self.nama))
+        return
+```
+- masukkan def ubah untuk mengubah data yang sudah di buat
+```
+def ubah(self):
+        print("Ubah Data")
+        self.nama = input("Masukkan Nama  : ")
+        if self.nama in data.keys():
+            self.nim = int(input("NIM            : "))
+            self.uts = int(input("Nilai UTS      : "))
+            self.uas = int(input("Nilai UAS      : "))
+            self.tugas = int(input("Nilai Tugas    : "))
+            self.total = self.uts*35/100 + self.uas*35/100 + self.tugas*30/100
+            data[self.nama] = self.nim, self.uts, self.uas, self.tugas, self.total
+        else:
+            print("Nama {0} tidak ditemukan".format(self.nama))
+        return
+```
+- masukan varieabel untuk memanggil perintah input nama,nim,uts,uas,dan nilai tugas secara otomatis tanpa harus memanggil dengan menambahkan variable lagi
+```
+dataMhs = Mahasiswa()
+dataMhs.tambah()
+dataMhs.tampilkan()
+dataMhs.ubah()
+dataMhs.hapus()
+dataMhs.tampilkan()
+```
+
+
 
 
